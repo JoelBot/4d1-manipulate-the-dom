@@ -42,7 +42,11 @@ leftNavActiveSwitchaARoo.forEach(function(leftNav){
 
 console.log('|| Question 4: Switched active from Overview to Reports')
 // 5. Set the default search input value to "Q4 sales".
+var searchText = document.querySelector('input')
+console.log(searchText)
+searchText.setAttribute('placeholder','Q4 sales')
 
+console.log('|| Question 5: Added Q4 sales as default placeholder')
 
 // 6. Add the "table-hover" class to the table. See the Bootstrap table docs.
 
