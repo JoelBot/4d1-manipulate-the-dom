@@ -6,7 +6,7 @@ console.log(rowCount.length)
 
 // 2. Set each dashboard image to different images, one for each season. Make sure you also set the alt="" attribute with an appropriate description.
 var images = document.querySelectorAll('img')
-console.dir(images)
+// console.dir(images)
 images.forEach(function(image) {
 
     function getRandomArbitrary(min, max) {
@@ -15,10 +15,18 @@ images.forEach(function(image) {
     image.setAttribute('src', 'http://unsplash.it/400?image=' + Math.round(getRandomArbitrary(1,42)))
 })
 
-console.log('|| Question 2: 4 images to seasons set to random 1 - 42 image numbers, so some repeats may occur')
+console.log('|| Question 2: 4 images to seasons set to random 1 - 42 image numbers, so some repeats may occur ||')
 // 3. Below each dashboard image, there's a season/quarter name. Below those, there are three dots. Replace those three dots with a randomly generated number formatted as currency, like $12,589.00.
+randomCurrencyAmount = document.querySelectorAll('.text-muted')
+console.log(randomCurrencyAmount)
+randomCurrencyAmount.forEach(function(price) {
 
-
+    function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    price.innerHTML = accounting.formatMoney(getRandomArbitrary(1,1000000))
+})
+console.log('|| Question 3: add randomly generated money value under images ||')
 // 4. Change the currently selected left side menu item from Overview to Reports.
 
 
