@@ -13,12 +13,13 @@ images.forEach(function(image) {
       return Math.random() * (max - min) + min;
     }
     image.setAttribute('src', 'http://unsplash.it/400?image=' + Math.round(getRandomArbitrary(1,42)))
+    image.setAttribute('alt', 'an image of either Winter, Spring, Summer, or Fall') //cheap and need to fix.
 })
 
 console.log('|| Question 2: 4 images to seasons set to random 1 - 42 image numbers, so some repeats may occur ||')
 // 3. Below each dashboard image, there's a season/quarter name. Below those, there are three dots. Replace those three dots with a randomly generated number formatted as currency, like $12,589.00.
 randomCurrencyAmount = document.querySelectorAll('.text-muted')
-console.log(randomCurrencyAmount)
+// console.log(randomCurrencyAmount)
 randomCurrencyAmount.forEach(function(price) {
 
     function getRandomArbitrary(min, max) {
@@ -28,8 +29,18 @@ randomCurrencyAmount.forEach(function(price) {
 })
 console.log('|| Question 3: add randomly generated money value under images ||')
 // 4. Change the currently selected left side menu item from Overview to Reports.
+leftNavActiveSwitchaARoo = document.querySelectorAll('.nav-sidebar a')
+// console.log(leftNavActiveSwitchaARoo)
+leftNavActiveSwitchaARoo.forEach(function(leftNav){
+    if (leftNav.innerText.includes('Overview')) {
+        leftNav.parentNode.classList.remove('active')
+    }
+    else if (leftNav.innerHTML === 'Reports'){
+        leftNav.parentNode.classList.add('active')
+    }
+})
 
-
+console.log('|| Question 4: Switched active from Overview to Reports')
 // 5. Set the default search input value to "Q4 sales".
 
 
