@@ -8,10 +8,14 @@ console.log(rowCount.length)
 var images = document.querySelectorAll('img')
 console.dir(images)
 images.forEach(function(image) {
-    
-    image.setAttribute('src', 'http://unsplash.it/400?image=42')
+
+    function getRandomArbitrary(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    image.setAttribute('src', 'http://unsplash.it/400?image=' + Math.round(getRandomArbitrary(1,42)))
 })
 
+console.log('|| Question 2: 4 images to seasons set to random 1 - 42 image numbers, so some repeats may occur')
 // 3. Below each dashboard image, there's a season/quarter name. Below those, there are three dots. Replace those three dots with a randomly generated number formatted as currency, like $12,589.00.
 
 
