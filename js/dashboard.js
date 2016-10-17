@@ -40,24 +40,61 @@ leftNavActiveSwitchaARoo.forEach(function(leftNav){
     }
 })
 
-console.log('|| Question 4: Switched active from Overview to Reports')
+console.log('|| Question 4: Switched active from Overview to Reports ||')
 // 5. Set the default search input value to "Q4 sales".
 var searchText = document.querySelector('input')
-console.log(searchText)
+// console.log(searchText)
 searchText.setAttribute('placeholder','Q4 sales')
 
-console.log('|| Question 5: Added Q4 sales as default placeholder')
+console.log('|| Question 5: Added Q4 sales as default placeholder ||')
 
 // 6. Add the "table-hover" class to the table. See the Bootstrap table docs.
+var tableHover = document.querySelector('table')
+// console.log(tableHover)
+tableHover.classList.add('table-hover')
 
-
+console.log('|| Question 6: added table-hover to the table tag class ||')
 // 7. Add the "success" class to the 7th - 10th row of the table, like: <tr class="success">...</tr>
+ var successRows = document.querySelectorAll('tbody tr')
+ // console.log(successRows)
+ successRows.forEach(function(row) {
+    if (row.rowIndex === 7 || row.rowIndex === 10) {
+        row.classList.add('success')
+    }
+ })
 
-
+console.log('|| Question 7: Add Success to table rows 7 and 10 ||')
 // 8. Change the table header names to: ID, First Name, Last Name, Department, Client.
+var headerNames = document.querySelectorAll('thead th')
+// console.log(headerNames)
+headerNames.forEach(function(name) {
+    if (name.cellIndex === 0) {
+        name.innerHTML = 'ID'
+    }
+    else if (name.cellIndex === 1) {
+        name.innerHTML = 'First Name'
+    }
+    else if (name.cellIndex === 2) {
+        name.innerHTML = 'Last Name'
+    }
+    else if (name.cellIndex === 3) {
+        name.innerHTML = 'Department'
+    }
+    else if (name.cellIndex === 4) {
+        name.innerHTML = 'Client'
+    }
+    else{alert("HELP NO MORE HEADERS")}
+})
 
-
+console.log("|| Question 8:  Changed headers of table to be accurate to specifications ||")
 // 9. Make an array of objects, each object representing a single row in the table. Remove the commas from the ID column and convert it to an actual Number data type. Example: [{id: 1001, firstName: 'Lorem', lastName: 'ipsum', department: 'dolor', client: 'sit'}]
 
-
+var collectionOfTableDatum = document.querySelectorAll('table')
+console.log(collectionOfTableDatum)
 // 10. Make each word in the table capitalized.
+var tableTextCollection = document.querySelectorAll('td')
+// console.log(tableTextCollection)
+tableTextCollection.forEach(function(tableText) {
+    tableText.innerHTML = tableText.innerHTML.toUpperCase()
+})
+console.log('|| Question 10: Capitalized all td value text ||')
