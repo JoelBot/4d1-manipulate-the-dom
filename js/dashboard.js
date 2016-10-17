@@ -89,8 +89,26 @@ headerNames.forEach(function(name) {
 console.log("|| Question 8:  Changed headers of table to be accurate to specifications ||")
 // 9. Make an array of objects, each object representing a single row in the table. Remove the commas from the ID column and convert it to an actual Number data type. Example: [{id: 1001, firstName: 'Lorem', lastName: 'ipsum', department: 'dolor', client: 'sit'}]
 
-var collectionOfTableDatum = document.querySelectorAll('table')
-console.log(collectionOfTableDatum)
+// var collectionOfTableDatum = document.querySelectorAll('tbody tr')
+// console.log(collectionOfTableDatum)
+//
+// collectionOfTableDatum.forEach(function(collection) {
+//     collection.map(function(collectionArray) {
+//
+//     })
+// })
+
+// from MDN
+var values = []
+var elems = document.querySelectorAll('tbody tr');
+var values = Array.prototype.map.call(elems, function(obj) {
+  return obj;
+});
+console.log('|| Question 9: Array of Objects from table')
+values.forEach(function(value) {
+    console.log(value)
+})
+
 // 10. Make each word in the table capitalized.
 var tableTextCollection = document.querySelectorAll('td')
 // console.log(tableTextCollection)
